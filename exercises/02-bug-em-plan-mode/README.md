@@ -1,36 +1,51 @@
 # Exercício 02 - Bug em plan mode
 
-A tarefa é descrita como um problema, nunca como um prompt: escrever o prompt faz parte do exercício.
-
 ## Objetivo
 
-Corrigir um bug sem deixar o Claude tocar no código antes de teres lido, criticado e corrigido o plano dele.
+Aprendes a rever, criticar e corrigir o plano do Claude antes de ele tocar no código.
 
 ## Ponto de partida
 
-A tag `ex02-start`: um dos testes que falhava no exercício 0, `tests/test_events.py::test_list_events_second_page`, aponta para um bug real. O sintoma também se vê na base de dados de exemplo: com a app a correr (`make run`), `GET /events` devolve `total: 6` mas `items: []`, e `GET /events?page=2&page_size=2` devolve os eventos 5 e 6 em vez do 3 e do 4.
+Corre `/ex 02`. O código é a solução de referência do exercício 1. O teu trabalho anterior não está aqui.
+
+`make test` falha nos mesmos três testes do exercício 0. Este exercício trata de um deles: `tests/test_events.py::test_list_events_second_page`. Os outros dois ficam para exercícios seguintes.
+
+Este teste aponta para um bug real na paginação de `GET /events`. A rota aceita os parâmetros `page` (começa em 1) e `page_size`. Com a base de dados de exemplo, `data/workshop.db`, que tem 6 eventos:
+
+- `GET /events` devolve `total: 6` mas `items: []`.
+- `GET /events?page=2&page_size=2` devolve os eventos 5 e 6, em vez do 3 e do 4.
 
 ## Tarefa
 
-Faz o teste passar. Antes de aprovar qualquer alteração, obtém um plano, encontra nele pelo menos um ponto errado ou desnecessário, corrige-o e só depois deixa o Claude executar.
+1. Confirma o sintoma. Num segundo terminal, corre `make run`. Abre `http://127.0.0.1:8000/events?page=2&page_size=2` no browser, ou corre `curl 'http://127.0.0.1:8000/events?page=2&page_size=2'`. Para o servidor com `Ctrl+C`.
+2. Entra em `plan mode` (modo em que o Claude só lê e propõe, sem editar). No terminal do Claude, carrega em `Shift+Tab` até aparecer `plan mode on` no fundo do ecrã.
+3. Pede ao Claude um plano para corrigir o bug.
+4. Lê o plano. Encontra pelo menos um ponto errado ou desnecessário. Anota-o: vais precisar dele no debrief.
+5. Recusa o plano. Diz ao Claude o que está errado e pede-lhe que o refaça. Repete os passos 4 e 5 até concordares com todos os pontos do plano.
+6. Aprova o plano. Só a partir daqui o Claude pode editar ficheiros. Não aproves um plano que altere `tests/`.
+7. Corre `make test`.
 
 ## Critério de sucesso
 
-O teste passa e nenhum outro teste que passava antes deixou de passar.
+- `make test` mostra `tests/test_events.py::test_list_events_second_page` a passar.
+- `make test` termina com `2 failed, 12 passed`. Os dois que falham são os que já falhavam antes:
+  - `tests/test_events.py::test_get_event_includes_available_seats`
+  - `tests/test_registrations.py::test_cancel_registration_frees_capacity`
+- `git diff -- tests/` não mostra nada: o teste não foi alterado.
 
 ## Dicas
 
 <details>
 <summary>Dica 1</summary>
 
-O Claude Code tem um modo em que só lê e propõe, sem editar. Começa por aí.
+O `plan mode` só serve se entrares nele antes do primeiro pedido. Se o Claude já está a editar, é tarde.
 
 </details>
 
 <details>
 <summary>Dica 2</summary>
 
-Entra em plan mode com `Shift+Tab` (ou `claude --permission-mode plan`). O plano que aparece é um documento que podes recusar e mandar refazer.
+Além de `Shift+Tab`, podes arrancar já em `plan mode` com `claude --permission-mode plan`. O plano que aparece é um documento que podes recusar e mandar refazer.
 
 </details>
 

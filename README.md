@@ -11,9 +11,9 @@ Criado e dado por Sebastião Teixeira e Vicente Barros.
 
 ## Como funciona
 
-Cada exercício parte do resultado do anterior: o `CLAUDE.md` que escreves no exercício 3 é o que o Claude lê no exercício 4, os hooks do exercício 5 ficam ativos até ao fim, e assim sucessivamente. Para ninguém ficar bloqueado, cada exercício tem uma tag git na app alvo, `exNN-start`, que marca o estado em que começa. As tags vão sendo publicadas à medida que o grupo avança: `/ex NN` vai buscá-las e, se a do exercício ainda não existir, diz-te que ele ainda não abriu.
+Cada exercício começa na solução de referência do anterior, não no teu trabalho: no exercício 4 o Claude lê o `CLAUDE.md` de referência do exercício 3, os hooks de referência do exercício 5 ficam ativos até ao fim, e assim sucessivamente. Assim ninguém fica bloqueado. Cada exercício tem uma tag git na app alvo, `exNN-start`, que marca o estado em que começa. As tags vão sendo publicadas à medida que o grupo avança: `/ex NN` vai buscá-las e, se a do exercício ainda não existir, diz-te que ele ainda não abriu.
 
-A tarefa de cada exercício é descrita como um problema, nunca como um prompt. Decidir o que dizer ao Claude faz parte do exercício.
+Quando um exercício pede uma feature, o enunciado tem uma secção `Especificação` com o comportamento a construir. Não é um prompt: o pedido ao Claude escreves tu, e decidir o que lhe dizer faz parte do exercício.
 
 ## Pré-requisitos
 
@@ -56,15 +56,15 @@ Comandos do plugin, sempre numa sessão aberta na app alvo:
 | 00 | [Setup](exercises/00-setup/README.md) | A suite de testes corre e os testes que falham são os esperados |
 | 01 | [Explorar o código](exercises/01-explorar-codigo/README.md) | Respondes a três perguntas sobre o repositório, com ficheiro e linha |
 | 02 | [Bug em plan mode](exercises/02-bug-em-plan-mode/README.md) | O teste passa sem regressões |
-| 03 | [CLAUDE.md](exercises/03-claude-md/README.md) | Menos correções e menos contexto gasto numa tarefa semelhante |
+| 03 | [CLAUDE.md](exercises/03-claude-md/README.md) | Com o `CLAUDE.md`, uma tarefa semelhante não precisa de mais correções nem de mais contexto |
 | 04 | [TDD](exercises/04-tdd/README.md) | Testes verdes sem alterar ficheiros de teste |
 | 05 | [Hooks](exercises/05-hooks/README.md) | Uma tentativa de editar `.env` é recusada |
-| 06 | [Subagent de revisão](exercises/06-subagent-review/README.md) | O revisor encontra pelo menos um dos problemas plantados |
+| 06 | [Subagent de revisão](exercises/06-subagent-review/README.md) | O revisor encontra pelo menos um dos problemas introduzidos de propósito |
 | 07 | [Skill changelog](exercises/07-skill-changelog/README.md) | Funciona invocada à mão e quando se pede um changelog sem a nomear |
 | 08 | [MCP](exercises/08-mcp/README.md) | Causa do bug encontrada nos dados e corrigida |
-| 09 | [Paralelismo](exercises/09-paralelismo/README.md) | Dois branches que fazem merge sem conflitos |
-| 10 | [Headless em CI](exercises/10-headless-ci/README.md) | O script falha no commit envenenado |
-| 11 | [Plugin](exercises/11-plugin/README.md) | Funciona no repositório de um colega sem configuração manual |
+| 09 | [Paralelismo](exercises/09-paralelismo/README.md) | Duas features feitas em paralelo entram no mesmo branch sem conflitos |
+| 10 | [Headless em CI](exercises/10-headless-ci/README.md) | O script falha no commit com um segredo falso e passa nos commits sem segredos |
+| 11 | [Plugin](exercises/11-plugin/README.md) | Funciona noutro repositório sem configuração manual |
 
 ## Estrutura do repositório
 
