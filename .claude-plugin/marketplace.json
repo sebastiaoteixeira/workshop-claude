@@ -1,0 +1,14 @@
+{
+  "name": "workshop-claude",
+  "description": "Marketplace do workshop de Claude Code do NEI",
+  "owner": {
+    "name": "Sebastião Teixeira e Vicente Barros"
+  },
+  "plugins": [
+    {
+      "name": "nei-workshop",
+      "source": "./",
+      "description": "Comandos de apoio ao workshop: /ex, /hint e /debrief"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "nei-workshop",
+  "description": "Comandos de apoio ao workshop de Claude Code do NEI: /ex, /hint e /debrief",
+  "version": "2.0.0",
+  "author": {
+    "name": "Sebastião Teixeira e Vicente Barros"
+  },
+  "homepage": "https://github.com/sebastiaoteixeira/workshop-claude",
+  "license": "MIT"
+}
