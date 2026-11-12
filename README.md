@@ -11,7 +11,7 @@ Criado e dado por Sebastião Teixeira e Vicente Barros.
 
 ## Como funciona
 
-Cada exercício começa na solução de referência do anterior, não no teu trabalho: no exercício 4 o Claude lê o `CLAUDE.md` de referência do exercício 3, os hooks de referência do exercício 5 ficam ativos até ao fim, e assim sucessivamente. Assim ninguém fica bloqueado. Cada exercício tem uma tag git na app alvo, `exNN-start`, que marca o estado em que começa. As tags vão sendo publicadas à medida que o grupo avança: `/ex NN` vai buscá-las e, se a do exercício ainda não existir, diz-te que ele ainda não abriu.
+Cada exercício começa na solução de referência do anterior, não no teu trabalho: no exercício 4 o Claude lê o `CLAUDE.md` de referência do exercício 3, os hooks de referência do exercício 5 ficam ativos até ao fim, e assim sucessivamente. Assim ninguém fica bloqueado. Cada exercício tem uma tag git na app alvo, `exNN-start`, que marca o estado em que começa. As tags de todos os exercícios já estão publicadas desde o início: `/ex NN` vai buscá-las e coloca-te no ponto de partida do exercício.
 
 Quando um exercício pede uma feature, o enunciado tem uma secção `Especificação` com o comportamento a construir. Não é um prompt: o pedido ao Claude escreves tu, e decidir o que lhe dizer faz parte do exercício.
 
