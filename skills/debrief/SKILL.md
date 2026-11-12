@@ -11,8 +11,12 @@ Exercício atual:
 
 !`${CLAUDE_PLUGIN_ROOT}/scripts/exercise.sh $exercise`
 
+## Pergunta
+
 Se `exercise` for `unknown`, pergunta qual é o exercício e para aqui.
 
 Lê o enunciado, o ficheiro em `readme`, e transcreve, sem alterações, o conteúdo da secção "Pergunta de debrief". Pede ao estudante que responda em três linhas no máximo e para: não respondas tu.
 
-Quando a resposta chegar, não uses ferramentas: comenta-a em exatamente duas frases, destacando o que ficou por considerar, e nada mais, sem títulos, listas nem perguntas.
+## Comentário à resposta
+
+Quando o estudante responder, não chames nenhuma ferramenta: já tens o que precisas. Escreve exatamente duas frases, a segunda a destacar o que ficou por considerar. Nada mais: sem terceira frase, títulos, listas nem perguntas.
