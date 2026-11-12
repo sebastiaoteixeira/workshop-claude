@@ -74,7 +74,7 @@ skills/                /ex, /hint e /debrief
 scripts/exercise.sh    Resolve o exercício atual e o enunciado para os três comandos
 exercises/
   NN-<slug>/README.md  Um enunciado por exercício
-presentation/          Guião da parte teórica
+presentation/          Apresentação da parte teórica (PDF)
 ```
 
 ## Licença
